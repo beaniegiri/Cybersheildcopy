@@ -1,7 +1,10 @@
 import json
 from transformers import pipeline
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-sentiment_analyzer=pipeline("sentiment-analysis")
+bert_analyzer=pipeline("sentiment-analysis")
+vader_analyzer=SentimentIntensityAnalyzer()
+
 
 # Step 1: Load abusive words from file
 def load_abusive_words(file_path):
@@ -10,10 +13,23 @@ def load_abusive_words(file_path):
     
 #Step2: Analyze sentiment of the input text
 def analyze_sentiment(text):
-        result=sentiment_analyzer(text)[0]
+        bert_result=bert_analyzer(text)[0]
+        vader_result=vader_analyzer.polarity_scores(text)
         return{
-            "sentiment":result['label'],
-            "confidence":round(result['score'],3)}
+            "bert":{
+            "sentiment": bert_result['label'],
+            "confidence": round(bert_result['score'], 3)
+            },
+            "vader":{
+                "sentiment": "positive" if vader_result['compound'] > 0 else 
+                        "negative" if vader_result['compound'] < 0 else 
+                        "neutral",
+            "compound_score": round(vader_result['compound'], 3),
+            "positive": round(vader_result['pos'], 3),
+            "negative": round(vader_result['neg'], 3),
+            "neutral": round(vader_result['neu'], 3)
+            }
+        }
 
 # Step 3: Check text for abusive words
 def detect_abuse(text, abusive_words):
@@ -50,21 +66,23 @@ def detect_abuse(text, abusive_words):
     
 
 # Step 4: Main function (runs when script is executed)
-# if __name__ == "__main__":
-#     # Load abusive words
-#     abusive_words = load_abusive_words("abusive_words.txt")
+if __name__ == "__main__":
+    # Load abusive words
+    abusive_words = load_abusive_words("abusive_words.txt")
     
-#     # Ask user for input
-#     user_text = input("Enter text to analyze: ")
+    # Ask user for input
+    user_text = input("Enter text to analyze: ")
     
-#     # Detect abusive words
-#     report = detect_abuse(user_text, abusive_words)
+    # Detect abusive words
+    report = detect_abuse(user_text, abusive_words)
     
-#     # Save report to JSON
-#     with open("abuse_report.json", "w") as f:
-#         json.dump(report, f, indent=4)  # `indent=4` makes JSON readable
+    # Save report to JSON
+    with open("abuse_report.json", "w") as f:
+        json.dump(report, f, indent=4)  # `indent=4` makes JSON readable
     
-#     print("Analysis complete! Report saved to 'abuse_report.json'.")
-
+    print("Analysis complete! Report saved to 'abuse_report.json'.")
+    print("\nComaprison Results:")
+    print(f"BERT:{report:['sentiment_anlaysis']['bert']}")
+    print(f"VADER:{report:['sentiment_analysos']['vader']}")
     
     
