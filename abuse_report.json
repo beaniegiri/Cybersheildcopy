@@ -1,17 +1,85 @@
 {
-    "abusive-words_found": [],
-    "sentiment": {
-        "bert": {
-            "sentiment": "NEGATIVE",
-            "confidence": 0.999
+    "1": {
+        "abusive-words_found": [],
+        "sentiment": {
+            "bert": {
+                "sentiment": "POSITIVE",
+                "confidence": 0.996
+            },
+            "vader": {
+                "sentiment": "neutral",
+                "compound_score": 0.0,
+                "positive": 0.0,
+                "negative": 0.0,
+                "neutral": 1.0
+            }
         },
-        "vader": {
-            "sentiment": "negative",
-            "compound_score": -0.58,
-            "positive": 0.0,
-            "negative": 0.556,
-            "neutral": 0.444
-        }
+        "text_analyze": "hallo"
     },
-    "text_analyze": "Hey are you stupid??"
+    "2": {
+        "abusive-words-found": [
+            {
+                "word": "stupid",
+                "severity": "high",
+                "text_analyzed": "You are stupid",
+                "sentiment": {
+                    "bert": {
+                        "sentiment": "NEGATIVE",
+                        "confidence": 1.0
+                    },
+                    "vader": {
+                        "sentiment": "negative",
+                        "compound_score": -0.527,
+                        "positive": 0.0,
+                        "negative": 0.63,
+                        "neutral": 0.37
+                    }
+                }
+            }
+        ]
+    },
+    "3": {
+        "abusive-words-found": [
+            {
+                "word": "dumb",
+                "severity": "high",
+                "text_analyzed": "Schiesse! du bist dumb",
+                "sentiment": {
+                    "bert": {
+                        "sentiment": "NEGATIVE",
+                        "confidence": 1.0
+                    },
+                    "vader": {
+                        "sentiment": "negative",
+                        "compound_score": -0.556,
+                        "positive": 0.0,
+                        "negative": 0.545,
+                        "neutral": 0.455
+                    }
+                }
+            }
+        ]
+    },
+    "4": {
+        "abusive-words-found": [
+            {
+                "word": "hate",
+                "severity": "high",
+                "text_analyzed": "I hate nothing!",
+                "sentiment": {
+                    "bert": {
+                        "sentiment": "POSITIVE",
+                        "confidence": 0.872
+                    },
+                    "vader": {
+                        "sentiment": "negative",
+                        "compound_score": -0.611,
+                        "positive": 0.0,
+                        "negative": 0.666,
+                        "neutral": 0.334
+                    }
+                }
+            }
+        ]
+    }
 }
