@@ -12,6 +12,19 @@
                 "positive": 0.0,
                 "negative": 0.0,
                 "neutral": 1.0
+            },
+            "roberta": {
+                "sentiment": "LABEL_1",
+                "confidence": 0.521
+            },
+            "hatebert": {
+                "label": "normal",
+                "confidence": 0.626
+            },
+            "textblob": {
+                "polarity": 0.0,
+                "subjectivity": 0.0,
+                "sentiment": "neutral"
             }
         },
         "text_analyze": "hallo"
@@ -33,6 +46,19 @@
                         "positive": 0.0,
                         "negative": 0.63,
                         "neutral": 0.37
+                    },
+                    "roberta": {
+                        "sentiment": "LABEL_0",
+                        "confidence": 0.971
+                    },
+                    "hatebert": {
+                        "label": "normal",
+                        "confidence": 0.628
+                    },
+                    "textblob": {
+                        "polarity": -0.8,
+                        "subjectivity": 1.0,
+                        "sentiment": "negative"
                     }
                 }
             }
@@ -55,6 +81,19 @@
                         "positive": 0.0,
                         "negative": 0.545,
                         "neutral": 0.455
+                    },
+                    "roberta": {
+                        "sentiment": "LABEL_0",
+                        "confidence": 0.581
+                    },
+                    "hatebert": {
+                        "label": "normal",
+                        "confidence": 0.655
+                    },
+                    "textblob": {
+                        "polarity": -0.375,
+                        "subjectivity": 0.5,
+                        "sentiment": "negative"
                     }
                 }
             }
@@ -77,9 +116,52 @@
                         "positive": 0.0,
                         "negative": 0.666,
                         "neutral": 0.334
+                    },
+                    "roberta": {
+                        "sentiment": "LABEL_0",
+                        "confidence": 0.934
+                    },
+                    "hatebert": {
+                        "label": "normal",
+                        "confidence": 0.725
+                    },
+                    "textblob": {
+                        "polarity": -1.0,
+                        "subjectivity": 0.9,
+                        "sentiment": "negative"
                     }
                 }
             }
         ]
+    },
+    "5": {
+        "abusive-words_found": [],
+        "sentiment": {
+            "bert": {
+                "sentiment": "NEGATIVE",
+                "confidence": 0.786
+            },
+            "vader": {
+                "sentiment": "neutral",
+                "compound_score": 0.0,
+                "positive": 0.0,
+                "negative": 0.0,
+                "neutral": 1.0
+            },
+            "roberta": {
+                "sentiment": "LABEL_1",
+                "confidence": 0.618
+            },
+            "hatebert": {
+                "label": "normal",
+                "confidence": 0.683
+            },
+            "textblob": {
+                "polarity": 0.0,
+                "subjectivity": 0.0,
+                "sentiment": "neutral"
+            }
+        },
+        "text_analyze": "algo esta mal"
     }
 }

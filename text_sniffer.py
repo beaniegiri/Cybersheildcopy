@@ -1,10 +1,17 @@
 import json
-from transformers import pipeline
+from transformers import pipeline, AutoTokenizer, AutoModelForSequenceClassification
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from textblob import TextBlob
 
 bert_analyzer=pipeline("sentiment-analysis")
-vader_analyzer=SentimentIntensityAnalyzer()
+roberta_analyzer=pipeline('sentiment-analysis',model="cardiffnlp/twitter-roberta-base-sentiment")
 
+vader_analyzer=SentimentIntensityAnalyzer()
+# HateBERT (HateXplain)
+hatebert_model_name = "Hate-speech-CNERG/bert-base-uncased-hatexplain"
+hatebert_tokenizer = AutoTokenizer.from_pretrained(hatebert_model_name)
+hatebert_model = AutoModelForSequenceClassification.from_pretrained(hatebert_model_name)
+hatebert_analyzer = pipeline("text-classification", model=hatebert_model, tokenizer=hatebert_tokenizer)
 
 # Step 1: Load abusive words from file
 def load_abusive_words(file_path):
@@ -15,6 +22,10 @@ def load_abusive_words(file_path):
 def analyze_sentiment(text):
         bert_result=bert_analyzer(text)[0]
         vader_result=vader_analyzer.polarity_scores(text)
+        roberta_result = roberta_analyzer(text)[0]
+        hatebert_result = hatebert_analyzer(text)[0]
+        textblob_result = TextBlob(text).sentiment
+
         return{
             "bert":{
             "sentiment": bert_result['label'],
@@ -28,8 +39,22 @@ def analyze_sentiment(text):
             "positive": round(vader_result['pos'], 3),
             "negative": round(vader_result['neg'], 3),
             "neutral": round(vader_result['neu'], 3)
-            }
-        }
+            },
+           "roberta": {
+            "sentiment": roberta_result['label'],
+            "confidence": round(roberta_result['score'], 3)
+        },
+        "hatebert": {
+            "label": hatebert_result['label'],
+            "confidence": round(hatebert_result['score'], 3)
+        },
+        "textblob": {
+            "polarity": round(textblob_result.polarity, 3),
+            "subjectivity": round(textblob_result.subjectivity, 3),
+            "sentiment": "positive" if textblob_result.polarity > 0 else
+                         "negative" if textblob_result.polarity < 0 else
+                         "neutral" 
+        }}
 
 # Step 3: Check text for abusive words
 def detect_abuse(text, abusive_words):
