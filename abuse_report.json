@@ -4,30 +4,30 @@
         "sentiment": {
             "bert": {
                 "sentiment": "POSITIVE",
-                "confidence": 0.996
+                "confidence": 0.992
             },
             "vader": {
-                "sentiment": "neutral",
-                "compound_score": 0.0,
-                "positive": 0.0,
+                "sentiment": "positive",
+                "compound_score": 0.417,
+                "positive": 0.41,
                 "negative": 0.0,
-                "neutral": 1.0
+                "neutral": 0.59
             },
             "roberta": {
-                "sentiment": "LABEL_1",
-                "confidence": 0.521
+                "sentiment": "LABEL_0",
+                "confidence": 0.792
             },
             "hatebert": {
                 "label": "normal",
-                "confidence": 0.626
+                "confidence": 0.647
             },
             "textblob": {
-                "polarity": 0.0,
-                "subjectivity": 0.0,
-                "sentiment": "neutral"
+                "polarity": -0.8,
+                "subjectivity": 1.0,
+                "sentiment": "negative"
             }
         },
-        "text_analyze": "hallo"
+        "text_analyze": "You are not that stupid."
     },
     "2": {
         "abusive-words-found": [
@@ -65,39 +65,34 @@
         ]
     },
     "3": {
-        "abusive-words-found": [
-            {
-                "word": "dumb",
-                "severity": "high",
-                "text_analyzed": "Schiesse! du bist dumb",
-                "sentiment": {
-                    "bert": {
-                        "sentiment": "NEGATIVE",
-                        "confidence": 1.0
-                    },
-                    "vader": {
-                        "sentiment": "negative",
-                        "compound_score": -0.556,
-                        "positive": 0.0,
-                        "negative": 0.545,
-                        "neutral": 0.455
-                    },
-                    "roberta": {
-                        "sentiment": "LABEL_0",
-                        "confidence": 0.581
-                    },
-                    "hatebert": {
-                        "label": "normal",
-                        "confidence": 0.655
-                    },
-                    "textblob": {
-                        "polarity": -0.375,
-                        "subjectivity": 0.5,
-                        "sentiment": "negative"
-                    }
-                }
+        "abusive-words_found": [],
+        "sentiment": {
+            "bert": {
+                "sentiment": "NEGATIVE",
+                "confidence": 0.998
+            },
+            "vader": {
+                "sentiment": "neutral",
+                "compound_score": 0.0,
+                "positive": 0.0,
+                "negative": 0.0,
+                "neutral": 1.0
+            },
+            "roberta": {
+                "sentiment": "LABEL_1",
+                "confidence": 0.736
+            },
+            "hatebert": {
+                "label": "normal",
+                "confidence": 0.628
+            },
+            "textblob": {
+                "polarity": 0.0,
+                "subjectivity": 0.0,
+                "sentiment": "neutral"
             }
-        ]
+        },
+        "text_analyze": "Schiesse! du bist dumm"
     },
     "4": {
         "abusive-words-found": [
@@ -163,5 +158,35 @@
             }
         },
         "text_analyze": "algo esta mal"
+    },
+    "6": {
+        "abusive-words_found": [],
+        "sentiment": {
+            "bert": {
+                "sentiment": "NEGATIVE",
+                "confidence": 0.977
+            },
+            "vader": {
+                "sentiment": "negative",
+                "compound_score": -0.296,
+                "positive": 0.0,
+                "negative": 0.423,
+                "neutral": 0.577
+            },
+            "roberta": {
+                "sentiment": "LABEL_1",
+                "confidence": 0.665
+            },
+            "hatebert": {
+                "label": "normal",
+                "confidence": 0.754
+            },
+            "textblob": {
+                "polarity": 0.0,
+                "subjectivity": 0.0,
+                "sentiment": "neutral"
+            }
+        },
+        "text_analyze": "No eres tan inocente"
     }
 }

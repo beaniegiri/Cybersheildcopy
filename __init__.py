@@ -1,4 +1,5 @@
 import json
+import torch 
 from text_sniffer import load_abusive_words, detect_abuse
 
 if __name__ == "__main__":

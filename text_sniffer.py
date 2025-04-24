@@ -1,4 +1,5 @@
 import json
+import torch
 from transformers import pipeline, AutoTokenizer, AutoModelForSequenceClassification
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from textblob import TextBlob
@@ -109,5 +110,4 @@ def detect_abuse(text, abusive_words):
 #     print("\nComaprison Results:")
 #     print(f"BERT:{report:['sentiment_anlaysis']['bert']}")
 #     print(f"VADER:{report:['sentiment_analysos']['vader']}")
-    
     
