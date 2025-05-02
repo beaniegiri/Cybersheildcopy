@@ -33,36 +33,36 @@
         "abusive-words-found": [
             {
                 "word": "stupid",
-                "severity": "high",
-                "text_analyzed": "You are stupid",
-                "sentiment": {
-                    "bert": {
-                        "sentiment": "NEGATIVE",
-                        "confidence": 1.0
-                    },
-                    "vader": {
-                        "sentiment": "negative",
-                        "compound_score": -0.527,
-                        "positive": 0.0,
-                        "negative": 0.63,
-                        "neutral": 0.37
-                    },
-                    "roberta": {
-                        "sentiment": "LABEL_0",
-                        "confidence": 0.971
-                    },
-                    "hatebert": {
-                        "label": "normal",
-                        "confidence": 0.628
-                    },
-                    "textblob": {
-                        "polarity": -0.8,
-                        "subjectivity": 1.0,
-                        "sentiment": "negative"
-                    }
-                }
+                "severity": "high"
             }
-        ]
+        ],
+        "text_analyzed": "You are stupid",
+        "sentiment": {
+            "bert": {
+                "sentiment": "NEGATIVE",
+                "confidence": 1.0
+            },
+            "vader": {
+                "sentiment": "negative",
+                "compound_score": -0.527,
+                "positive": 0.0,
+                "negative": 0.63,
+                "neutral": 0.37
+            },
+            "roberta": {
+                "sentiment": "LABEL_0",
+                "confidence": 0.971
+            },
+            "hatebert": {
+                "label": "normal",
+                "confidence": 0.628
+            },
+            "textblob": {
+                "polarity": -0.8,
+                "subjectivity": 1.0,
+                "sentiment": "negative"
+            }
+        }
     },
     "3": {
         "abusive-words_found": [],
@@ -98,36 +98,36 @@
         "abusive-words-found": [
             {
                 "word": "hate",
-                "severity": "high",
-                "text_analyzed": "I hate nothing!",
-                "sentiment": {
-                    "bert": {
-                        "sentiment": "POSITIVE",
-                        "confidence": 0.872
-                    },
-                    "vader": {
-                        "sentiment": "negative",
-                        "compound_score": -0.611,
-                        "positive": 0.0,
-                        "negative": 0.666,
-                        "neutral": 0.334
-                    },
-                    "roberta": {
-                        "sentiment": "LABEL_0",
-                        "confidence": 0.934
-                    },
-                    "hatebert": {
-                        "label": "normal",
-                        "confidence": 0.725
-                    },
-                    "textblob": {
-                        "polarity": -1.0,
-                        "subjectivity": 0.9,
-                        "sentiment": "negative"
-                    }
-                }
+                "severity": "high"
             }
-        ]
+        ],
+        "text_analyzed": "I hate nothing!",
+        "sentiment": {
+            "bert": {
+                "sentiment": "POSITIVE",
+                "confidence": 0.872
+            },
+            "vader": {
+                "sentiment": "negative",
+                "compound_score": -0.611,
+                "positive": 0.0,
+                "negative": 0.666,
+                "neutral": 0.334
+            },
+            "roberta": {
+                "sentiment": "LABEL_0",
+                "confidence": 0.934
+            },
+            "hatebert": {
+                "label": "normal",
+                "confidence": 0.725
+            },
+            "textblob": {
+                "polarity": -1.0,
+                "subjectivity": 0.9,
+                "sentiment": "negative"
+            }
+        }
     },
     "5": {
         "abusive-words_found": [],
@@ -223,36 +223,36 @@
         "abusive-words-found": [
             {
                 "word": "dumb",
-                "severity": "high",
-                "text_analyzed": "That was a dumb idea.",
-                "sentiment": {
-                    "bert": {
-                        "sentiment": "NEGATIVE",
-                        "confidence": 1.0
-                    },
-                    "vader": {
-                        "sentiment": "negative",
-                        "compound_score": -0.511,
-                        "positive": 0.0,
-                        "negative": 0.452,
-                        "neutral": 0.548
-                    },
-                    "roberta": {
-                        "sentiment": "LABEL_0",
-                        "confidence": 0.879
-                    },
-                    "hatebert": {
-                        "label": "normal",
-                        "confidence": 0.729
-                    },
-                    "textblob": {
-                        "polarity": -0.375,
-                        "subjectivity": 0.5,
-                        "sentiment": "negative"
-                    }
-                }
+                "severity": "high"
             }
-        ]
+        ],
+        "text_analyzed": "That was a dumb idea.",
+        "sentiment": {
+            "bert": {
+                "sentiment": "NEGATIVE",
+                "confidence": 1.0
+            },
+            "vader": {
+                "sentiment": "negative",
+                "compound_score": -0.511,
+                "positive": 0.0,
+                "negative": 0.452,
+                "neutral": 0.548
+            },
+            "roberta": {
+                "sentiment": "LABEL_0",
+                "confidence": 0.879
+            },
+            "hatebert": {
+                "label": "normal",
+                "confidence": 0.729
+            },
+            "textblob": {
+                "polarity": -0.375,
+                "subjectivity": 0.5,
+                "sentiment": "negative"
+            }
+        }
     },
     "9": {
         "abusive-words_found": [],

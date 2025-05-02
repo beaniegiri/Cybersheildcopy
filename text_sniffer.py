@@ -64,19 +64,23 @@ def detect_abuse(text, abusive_words):
     sentiment_report=analyze_sentiment(text)
     for word in abusive_words:
         if word in words_in_text:
-            detected.append({
-                "word": word,
-                "severity": "high", 
-                "text_analyzed": text,
-                "sentiment":sentiment_report
+            detected.append(
+                {"word": word,
+                "severity": "high",
+                # "text_analyzed": text,
+                # "sentiment":sentiment_report
+                } 
+               
                   
-   
-            })
+            )
+            # })
     #sentiment_report=analyze_sentiment(text)
     if detected:
         return{
             'abusive-words-found':detected,
             #'sentiment':sentiment_report
+             "text_analyzed": text,
+            "sentiment":sentiment_report
         }
     else:
         return{
