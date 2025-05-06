@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     report_dict={}
     for key in content_object:
-        user_text=content_object[key]
+        user_text=content_object[key]["TEXT"]
         report = detect_abuse(user_text, abusive_words)
         report_dict[key]=report
     # Save report to JSON
